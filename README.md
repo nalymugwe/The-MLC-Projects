@@ -23,7 +23,7 @@ A feature selection step was done using XGBoost and 36 features were selected th
 An analysis was done on the models using Logistic regression, KNN Classifier, Decision Tree, Random Forest, XGBoost and LightGM. The random forest classifier had the best model accuracy of 73.5% and on further hyperparameter tuning, the model's accuracy improved to 74.1%
 
 
-# Model Explainability
+## Model Explainability
 The top 3 features that greatly influences the outcome of an Android app are: 
 
 - Number of ratings
@@ -53,7 +53,7 @@ This shows that the final selected features each have an impact in the model thu
 To predict the trip-time precisely for the advancement of Intelligent Transport Systems (ITS) and traveller information systems. 
 
 
-# Exploratory Data Analysis
+## Exploratory Data Analysis
 The data set had 26 columns and 9,601,139 rows. The first row was removed as it's a copy of the index column. The resulting dataset had 25 columns and no null values.
 
 The scatter plot analysis between the target features (Duration) and the other features:
@@ -72,6 +72,27 @@ The data set was scaled using the MinMax Scaler so that all values ranged betwee
 ## Model Selection and Analysis
 An analysis was done on the best regression models to use using Linear regression, Ridge Regression, Decision Tree, XGBoost and LightGBM. 
 
-The LightGBM Regressor had the best model metrics with LightThe random forest classifier had the best model accuracy of 73.5% and on further hyperparameter tuning, the model's accuracy improved to 74.1%
+The light GBM has a good performance with an R squared of 81.7% meaning 81.7% of the data fits into the regression model. It has a mean absolute error of 0.05 which means that the actual duration time will miss the predicted time by 0.05. The Mean squared error is also quite low giving us more confidence in the choice of this model.
+
+
+## Model Explainability
+The features that contribute to the trip duration of a bicycle are:
+
+- Distance
+- Harvesine distance (great-circle distance between two points on a sphere)
+- Pick up hour of the bicycles
+- Drop off hour of the bicycles
+- Temperature
+- Ground temperature
+
+From the summary plot, we can see that the lower distances reduced the trip duration. So did lower temperatures, lower harvesine distances and low drop off hours. High pick up hours reduced the trip duration.
+
+The dependence plots shows how the selected features interact with the target variable and it also shows which other feature it interacts with mostly. The drop off hour interacts with the pickup hour while the distance interacts with harvesine distance. The tempereture interacts with the distance too.
+
+At the first observation, the harvesine distance pushed the score of the model high while the drop off hour, pick up hour and distance pushed the model to score low.
+
+At the 105th observation, the harvesine distance pushed the model to score low wheareas temperature, ground temperature, distance and pickup hour pushed the model score higher. The temperature did not affect the score of the model at this observation.
+
+Each feature has an impact on the model at each observation.
 
 
