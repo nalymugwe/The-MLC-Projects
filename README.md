@@ -5,7 +5,7 @@
 Classify whether an android app is benign or malware.
 
 
-## EDA
+## Exploratory Data Analysis
 The data set called Android App Permission Dataset had 184 columns consisting of the features, name of the app, app descrption and the category of the app. The target feature had binary varibles that classified whether an app was benign or not.
 
 5 columns with were removed from the data as it doesn't influence the outcome of the target column. These columns were:  names of Apps, Related Apps, Description and Package.
@@ -43,3 +43,35 @@ On the 100th observation, the feature 'price' pushed the model to score high whe
 At the 815th observation, there are more features than one that are pushing the model to have a high score.
 
 This shows that the final selected features each have an impact in the model thus none should be removed.
+
+
+
+# The-MLC-Projects: Classification pf Benign or Malware Android Apps
+
+
+## Task
+To predict the trip-time precisely for the advancement of Intelligent Transport Systems (ITS) and traveller information systems. 
+
+
+# Exploratory Data Analysis
+The data set had 26 columns and 9,601,139 rows. The first row was removed as it's a copy of the index column. The resulting dataset had 25 columns and no null values.
+
+The scatter plot analysis between the target features (Duration) and the other features:
+
+- The target feature is strongly correlated to distance and haversine distance.
+
+- The target feature is weakly correlated to pick up hour, drop off hour, temperature and ground tempature.
+
+- The target feature has no very little correlation with the rest of the features: PLong, PLatd, DLong, DLatd, Pmonth, PDay, Pmin, Dmonth, Dday, Dmin, wind, humid, solar, PDweek, DDweek, Precipitation, snow and dust.
+
+- From the above, the features that are most applicable for modeling are distance, haversine distance, pick up hour, drop off hour, temperature and ground temparature.
+
+The data set was scaled using the MinMax Scaler so that all values ranged between 0 and 1.
+
+
+## Model Selection and Analysis
+An analysis was done on the best regression models to use using Linear regression, Ridge Regression, Decision Tree, XGBoost and LightGBM. 
+
+The LightGBM Regressor had the best model metrics with LightThe random forest classifier had the best model accuracy of 73.5% and on further hyperparameter tuning, the model's accuracy improved to 74.1%
+
+
