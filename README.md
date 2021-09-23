@@ -1,4 +1,4 @@
-# The-MLC-Projects: Classification pf Benign or Malware Android Apps
+# The-MLC-Projects: Classification of Benign or Malware Android Apps
 
 
 ## Task
